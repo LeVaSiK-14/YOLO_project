@@ -16,5 +16,5 @@ def get_dirs_from_dir(dir_path: str) -> list:
 
 
 
-print(len(get_files_from_dir('media/output_val_dir')))
-print(len(get_files_from_dir('media/output_train_dir')))
+# print(len(get_files_from_dir('media/output_val_dir')))
+# print(len(get_files_from_dir('media/output_train_dir')))
