@@ -4,6 +4,8 @@ import os
 
 from utils.configs import(
     MEDIA,
+    NUM_TRAIN,
+    NUM_VAL,
 )
 from utils.get_files_from_dirs import(
     get_dirs_from_dir,
@@ -16,6 +18,9 @@ from utils.get_full_path import(
 )
 from utils.get_file_name import(
     get_file_name,
+)
+from utils.delete_dirs import(
+    delete_dirs,
 )
 
 
@@ -57,20 +62,18 @@ def create_duplicate_elements(source_dir: str, output_train_dir: str, output_val
             img_path = os.path.join(dir_path, img_name)
             img = cv2.imread(img_path)
 
-            num_train = 8
-            num_val = 3
             
-            for i in range(num_train):
+            for i in range(NUM_TRAIN):
                 augmented = transform(image=img)
                 aug_img = augmented['image']
                 new_img_name = f"train_{get_file_name(img_path)}__{i+1}.png"
                 cv2.imwrite(os.path.join(full_output_train_dir, new_img_name), aug_img)
 
             
-            for i in range(num_val):
+            for i in range(NUM_VAL):
                 augmented = transform(image=img)
                 aug_img = augmented['image']
                 new_img_name = f"val_{get_file_name(img_path)}__{i+1}.png"
                 cv2.imwrite(os.path.join(full_output_val_dir, new_img_name), aug_img)
 
-
+    delete_dirs(full_source_dir)
