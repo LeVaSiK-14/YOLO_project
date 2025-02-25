@@ -10,8 +10,9 @@ from utils.configs import(
 from utils.get_files_from_dirs import(
     get_dirs_from_dir,
 )
-from utils.create_dir import(
+from utils.process_dirs import(
     create_dir,
+    delete_dirs,
 )
 from utils.get_full_path import(
     get_full_path,
@@ -19,11 +20,12 @@ from utils.get_full_path import(
 from utils.get_file_name import(
     get_file_name,
 )
-from utils.delete_dirs import(
-    delete_dirs,
+from utils.utils import(
+    measure_time,
 )
 
 
+@measure_time
 def create_duplicate_elements(source_dir: str, output_train_dir: str, output_val_dir: str) -> None:
 
     transform = A.Compose([

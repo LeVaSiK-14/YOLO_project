@@ -6,7 +6,7 @@ import random
 from utils.get_file_name import(
     get_file_name,
 )
-from utils.create_dir import(
+from utils.process_dirs import(
     create_dir,
 )
 from utils.get_files_from_dirs import(
@@ -14,6 +14,9 @@ from utils.get_files_from_dirs import(
 )
 from utils.get_full_path import(
     get_full_path,
+)
+from utils.utils import(
+    measure_time,
 )
 from utils.configs import(
     MEDIA,
@@ -23,6 +26,7 @@ from utils.configs import(
 )
 
 
+@measure_time
 def get_resized_images(images_dir_path: str, output_dir_path: str) -> None:
 
     create_dir(MEDIA)
