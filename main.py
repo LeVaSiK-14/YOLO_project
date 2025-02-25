@@ -9,10 +9,15 @@ from utils.get_full_path import(
 )
 from utils.process_dirs import(
     move_dirs,
-    delete_dirs
+    delete_dirs,
+    delete_file,
 )
 from utils.utils import(
     measure_time,
+    create_dataset_dir,
+)
+from utils.create_annotations import(
+    create_annotation_for_image,
 )
 from utils.configs import(
     ELEMENTS,
@@ -23,13 +28,27 @@ from utils.configs import(
     DATASET_IMAGE_VAL,
     DATASET_IMAGE_TRAIN,
     DATASET_IMAGES,
+    CLASSES,
+    DATA_YAML,
+    DATASET_LABEL_TRAIN,
+    DATASET_LABEL_VAL,
+    DATASET,
 )
 
 
 @measure_time
 def main():
-    delete_dirs(DATASET_IMAGES)
+
+    delete_dirs(DATASET)
+    delete_file(CLASSES)
     
+    create_dataset_dir(
+        DATA_YAML,
+        DATASET_IMAGE_TRAIN,
+        DATASET_IMAGE_VAL,
+        DATASET_LABEL_TRAIN,
+        DATASET_LABEL_VAL
+    )
     get_resized_images(
         ELEMENTS,
         get_full_path(MEDIA, AUGMENTED_IMAGES)
@@ -48,6 +67,16 @@ def main():
         DATASET_IMAGE_TRAIN
     )
     delete_dirs(MEDIA)
+    create_annotation_for_image(
+        DATASET_IMAGE_VAL,
+        DATASET_LABEL_VAL,
+        CLASSES
+    )
+    create_annotation_for_image(
+        DATASET_IMAGE_TRAIN,
+        DATASET_LABEL_TRAIN,
+        CLASSES
+    )
 
 
 if __name__ == "__main__":

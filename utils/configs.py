@@ -1,6 +1,6 @@
 
 MEDIA = 'media'
-
+DATASET = 'dataset'
 ELEMENTS = 'elements'
 
 AUGMENTED_IMAGES = 'augmented_images'
@@ -23,3 +23,7 @@ NUM_VAL = 3
 IMAGE_SIZE = 256
 OBJECT_SIZE = 110
 NUM_IMAGES = 8
+
+
+CLASSES = 'classes.txt'
+DATA_YAML = 'dataset/data.yaml'

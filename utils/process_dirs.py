@@ -18,4 +18,16 @@ def move_dirs(path_from: str, path_to: str) -> None:
 
 
 def delete_dirs(path_to_dir: str) -> None:
-    shutil.rmtree(path_to_dir)
+    if os.path.exists(path_to_dir):
+        shutil.rmtree(path_to_dir)
+
+
+def create_file(file_name: str) -> None:
+    if not os.path.exists(file_name):
+        with open(file_name, "w") as f:
+            pass
+
+
+def delete_file(file_path: str) -> None:
+    if os.path.exists(file_path):
+        os.remove(file_path)
