@@ -19,6 +19,9 @@ from utils.utils import(
 from utils.create_annotations import(
     create_annotation_for_image,
 )
+from utils.create_data_yaml import(
+    write_data_yaml,
+)
 from utils.configs import(
     ELEMENTS,
     MEDIA,
@@ -27,7 +30,6 @@ from utils.configs import(
     OUTPUT_VAL_DIR,
     DATASET_IMAGE_VAL,
     DATASET_IMAGE_TRAIN,
-    DATASET_IMAGES,
     CLASSES,
     DATA_YAML,
     DATASET_LABEL_TRAIN,
@@ -41,7 +43,7 @@ def main():
 
     delete_dirs(DATASET)
     delete_file(CLASSES)
-    
+
     create_dataset_dir(
         DATA_YAML,
         DATASET_IMAGE_TRAIN,
@@ -77,6 +79,13 @@ def main():
         DATASET_LABEL_TRAIN,
         CLASSES
     )
+    write_data_yaml(
+        DATA_YAML,
+        CLASSES,
+        DATASET_IMAGE_TRAIN,
+        DATASET_IMAGE_VAL
+    )
+    delete_file(CLASSES)
 
 
 if __name__ == "__main__":
