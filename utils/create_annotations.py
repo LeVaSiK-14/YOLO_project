@@ -13,8 +13,11 @@ from utils.get_files_from_dirs import(
 from utils.get_image_class_id import(
     get_class_id_by_name,
 )
+from utils.utils import(
+    measure_time,
+)
 
-
+@measure_time
 def create_annotation_for_image(images_dir: str, labels_dir: str, classes_file_path: str):
 
     for file_name in get_files_from_dir(images_dir):

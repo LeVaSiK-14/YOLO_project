@@ -1,0 +1,21 @@
+train: dataset/images/train
+val: dataset/images/val
+
+nc: 15
+
+names:
+    0: 'blue_lamp_19w'
+    1: 'blue_lamp_32w'
+    2: 'blue_on_off_one_close_20'
+    3: 'red_lamp'
+    4: 'blue_on_off_one_close_44'
+    5: 'blue_panel'
+    6: 'blue_lamp_36w'
+    7: 'blue_lamp_50w'
+    8: 'blue_on_off_two_close_20'
+    9: 'blue_on_off_one_open_44'
+    10: 'red_panel'
+    11: 'blue_lamp_55w'
+    12: 'blue_on_off_two_close_44'
+    13: 'pink_on_off_open_54'
+    14: 'blue_lamp_13w'
