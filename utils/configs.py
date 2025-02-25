@@ -1,9 +1,17 @@
 
 MEDIA = 'media'
+
 ELEMENTS = 'elements'
+
 AUGMENTED_IMAGES = 'augmented_images'
 OUTPUT_TRAIN_DIR = 'output_train_dir'
 OUTPUT_VAL_DIR = 'output_val_dir'
+
+DATASET_IMAGE_TRAIN = 'dataset/images/train'
+DATASET_IMAGE_VAL = 'dataset/images/val'
+
+DATASET_LABEL_TRAIN = 'dataset/labels/train'
+DATASET_LABEL_VAL = 'dataset/labels/val'
 
 
 NUM_TRAIN = 8

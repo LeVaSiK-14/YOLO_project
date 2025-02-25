@@ -16,5 +16,9 @@ def get_dirs_from_dir(dir_path: str) -> list:
 
 
 
-# print(len(get_files_from_dir('media/output_val_dir')))
-# print(len(get_files_from_dir('media/output_train_dir')))
+# val = len(get_files_from_dir('media/output_val_dir'))
+# train = len(get_files_from_dir('media/output_train_dir'))
+# print(val, 'В папке val')
+# print(train, 'В папке train')
+# print(val + train, "Всего")
+
