@@ -34,4 +34,4 @@
 ### 4. **Контакты**
 > Создатель: **Бойко Лев**<br>
 > Gmail: **lev201611@gmail.com**<br>
-> Telegram: [Mr_LeVaSiK_Z](https://t.me/Mr_LeVaSiK_Z)
+> Telegram: **[Mr_LeVaSiK_Z](https://t.me/Mr_LeVaSiK_Z)**
