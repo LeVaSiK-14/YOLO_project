@@ -72,12 +72,14 @@ def main():
     create_annotation_for_image(
         DATASET_IMAGE_VAL,
         DATASET_LABEL_VAL,
-        CLASSES
+        CLASSES,
+        # 'test'
     )
     create_annotation_for_image(
         DATASET_IMAGE_TRAIN,
         DATASET_LABEL_TRAIN,
-        CLASSES
+        CLASSES,
+        # 'test'
     )
     write_data_yaml(
         DATA_YAML,

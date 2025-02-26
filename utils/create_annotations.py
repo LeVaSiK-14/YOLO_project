@@ -18,7 +18,7 @@ from utils.utils import(
 )
 
 @measure_time
-def create_annotation_for_image(images_dir: str, labels_dir: str, classes_file_path: str):
+def create_annotation_for_image(images_dir: str, labels_dir: str, classes_file_path: str):  #, output_images_dir: str
 
     for file_name in get_files_from_dir(images_dir):
         if file_name.lower().endswith(".png"):
@@ -36,6 +36,7 @@ def create_annotation_for_image(images_dir: str, labels_dir: str, classes_file_p
             
             contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
             if not contours:
+                print(f'Контуры в картинке {img_path} не были найдены!')
                 return
             
             c = max(contours, key=cv2.contourArea)
