@@ -16,8 +16,8 @@ def write_data_yaml(data_yaml_path: str, classes_file_path: str, train_path: str
     class_amount, classes = get_all_classes(classes_file_path) # Получаем список всех классов в формате dict()
 
     with open(data_yaml_path, 'a', encoding='utf-8') as file: # Открываем файл для дозаписи
-        file.write(f'train: {train_path}\n') # 1 строка путь к картинкам для тренировки
-        file.write(f'val: {val_path}\n\n') # 2 строка путь к картинкам для валидации
+        file.write(f'train: ../{train_path}\n') # 1 строка путь к картинкам для тренировки
+        file.write(f'val: ../{val_path}\n\n') # 2 строка путь к картинкам для валидации
         file.write(f'nc: {class_amount}\n\n') # 4 строка общее колличество классов
         file.write(f'names:\n') # 6 строка обозначение для перечисления классов картинок
 
