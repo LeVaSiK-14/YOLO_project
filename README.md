@@ -35,11 +35,18 @@
 1. Для запуска перейдите в директорию **yolov5** командой `cd yolov5`
 2. Запустите процесс обучения 
 > `python train.py --img 640 --batch 16 --epochs 50 --data ../dataset/data.yaml --weights yolov5x.pt`
+> `python train.py --img 640 --batch 16 --epochs 50 --data ../dataset/data.yaml --weights runs/train/exp5/weights/best.pt`
 3. После успешного обучения запустите команду для обнаружения элементов на чертежах
-> `python detect.py --weights runs/train/exp4/weights/best.pt --source ../images/two.png --img 640 --conf 0.25 --view`
-> ``
+> `python detect.py --weights runs/train/exp5/weights/best.pt --source ../images/two.png --img 640 --conf 0.25 --view`
+
 
 ### 4. **Контакты**
 > Создатель: **Бойко Лев**<br>
 > Gmail: **lev201611@gmail.com**<br>
 > Telegram: **[Mr_LeVaSiK_Z](https://t.me/Mr_LeVaSiK_Z)**
+
+
+Удачные веса
+
+runs/train/exp3 для дообучения
+runs/train/exp5 с дообучением с новыми 8 изображениями

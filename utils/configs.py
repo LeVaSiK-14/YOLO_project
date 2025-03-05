@@ -4,7 +4,7 @@
 
 MEDIA: str = 'media'
 DATASET: str = 'dataset'
-ELEMENTS: str = 'elements2'
+ELEMENTS: str = 'all_elements/elements3'
 
 AUGMENTED_IMAGES: str = 'augmented_images'
 OUTPUT_TRAIN_DIR: str = 'output_train_dir'
