@@ -25,4 +25,5 @@ def get_file_name_for_class(path: str) -> str:
     full_name = get_file_name(path) # Получаем название файла 
     result = re.sub(r'_\d+__\d+$', '', full_name) # Используя регулярку удаляем лишнюю нумерацию
     result = result.replace('train_', '').replace('val_', '') # Убираем лишние слова из названия, такие как: train_ и val_
+    result = result.split('___')[-1]
     return result

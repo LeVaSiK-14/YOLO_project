@@ -4900,7 +4900,7 @@
         "kind": 2,
         "importPath": "utils.duplicate_elements",
         "description": "utils.duplicate_elements",
-        "peekOfCode": "def create_duplicate_elements(source_dir: str, output_train_dir: str, output_val_dir: str) -> None:\n    \"\"\"\n        Функция для создания искаженных элементов каждой картинки для лучшего обучения нейросети YOLO\n        Принимает в себя:\n        - source_dir: str путь к директории с директориями внутри которых картинки которые нужно дублировать\n        - output_train_dir: str путь к директории куда сохранять картинки для обучения\n        - output_val_dir: str путь к директории куда сохранять картинки для валидации\n    \"\"\"\n    # Создание рандомной трансформации картинок\n    transform = A.Compose([",
+        "peekOfCode": "def create_duplicate_elements(source_dir: str, output_train_dir: str, output_val_dir: str) -> None:\n    \"\"\"\n        Функция для создания искаженных элементов каждой картинки для лучшего обучения нейросети YOLO\n        Принимает в себя:\n        - source_dir: str путь к директории с директориями внутри которых картинки которые нужно дублировать\n        - output_train_dir: str путь к директории куда сохранять картинки для обучения\n        - output_val_dir: str путь к директории куда сохранять картинки для валидации\n    \"\"\"\n    # Создание рандомной трансформации картинок\n    create_dir(MEDIA) # Создаем директорию media для хранения картинок(временного)",
         "detail": "utils.duplicate_elements",
         "documentation": {}
     },

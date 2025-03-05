@@ -21,4 +21,4 @@ python train.py --img 640 --batch 16 --epochs 50 --data ../dataset/data.yaml --w
 
 
 Запуск обнаружения элементов на чертеже
-python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/page_27_croped.png --img 640 --conf 0.25 --view
+python detect.py --weights runs/train/exp3/weights/best.pt --source ../images/one.png --img 640 --conf 0.25 --view

@@ -35,25 +35,7 @@ def create_duplicate_elements(source_dir: str, output_train_dir: str, output_val
         - output_val_dir: str путь к директории куда сохранять картинки для валидации
     """
     # Создание рандомной трансформации картинок
-    transform = A.Compose([
-        A.Affine(
-            rotate=(-30, 30),
-            translate_percent={"x": (-0.1, 0.1), "y": (-0.1, 0.1)},
-            scale=(0.8, 1.2),
-            # shear=(-20, 20),
-            interpolation=cv2.INTER_LINEAR,
-            border_mode=cv2.BORDER_CONSTANT,
-            fill=(255, 255, 255),
-            p=0.7
-        ),
-        A.HorizontalFlip(p=0.5),
-        A.VerticalFlip(p=0.5),
-        # A.RandomBrightnessContrast(
-        #     brightness_limit=(-0.1, 0),
-        #     contrast_limit=(-0.2, 0.2), 
-        #     p=0.5
-        # )
-    ])
+    
 
     create_dir(MEDIA) # Создаем директорию media для хранения картинок(временного)
 
@@ -75,6 +57,20 @@ def create_duplicate_elements(source_dir: str, output_train_dir: str, output_val
             img_path = get_full_path(dir_path, img_name) # Получаем полный путь к картинке
             img = cv2.imread(img_path) # Читаем картинку с openCV
 
+            transform = A.Compose([
+                # Дополнительное геометрическое преобразование без поворота
+                A.Affine(
+                    rotate=(-90, 90),
+                    translate_percent={"x": (-0.1, 0.1), "y": (-0.1, 0.1)},
+                    scale=(0.8, 1.2),
+                    interpolation=cv2.INTER_LINEAR,
+                    border_mode=cv2.BORDER_CONSTANT,
+                    fill=(255, 255, 255),
+                    p=0.7
+                ),
+                A.HorizontalFlip(p=0.5),
+                A.VerticalFlip(p=0.5)
+            ])
             
             for i in range(NUM_TRAIN): # Запускаем цикл NUM_TRAIN раз для создания дубликатов для обучения
                 augmented = transform(image=img) # Создаем искаженное изображение

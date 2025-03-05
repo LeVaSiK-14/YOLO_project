@@ -36,7 +36,8 @@
 2. Запустите процесс обучения 
 > `python train.py --img 640 --batch 16 --epochs 50 --data ../dataset/data.yaml --weights yolov5x.pt`
 3. После успешного обучения запустите команду для обнаружения элементов на чертежах
-> `python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/page_27_croped.png --img 640 --conf 0.25 --view`
+> `python detect.py --weights runs/train/exp4/weights/best.pt --source ../images/two.png --img 640 --conf 0.25 --view`
+> ``
 
 ### 4. **Контакты**
 > Создатель: **Бойко Лев**<br>
