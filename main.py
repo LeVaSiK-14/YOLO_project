@@ -58,7 +58,7 @@ def main():
         12) Удаления файла classses.txt
     """
     delete_dirs(DATASET)
-    delete_file(CLASSES)
+    # delete_file(CLASSES)
 
     create_dataset_dir(
         DATA_YAML,
@@ -101,7 +101,7 @@ def main():
         DATASET_IMAGE_TRAIN,
         DATASET_IMAGE_VAL
     )
-    delete_file(CLASSES)
+    # delete_file(CLASSES)
 
 
 if __name__ == "__main__":

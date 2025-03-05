@@ -4,7 +4,7 @@
 
 MEDIA: str = 'media'
 DATASET: str = 'dataset'
-ELEMENTS: str = 'all_elements/elements3'
+ELEMENTS: str = 'all_elements/elements'
 
 AUGMENTED_IMAGES: str = 'augmented_images'
 OUTPUT_TRAIN_DIR: str = 'output_train_dir'
@@ -20,8 +20,8 @@ DATASET_LABEL_TRAIN: str = 'dataset/labels/train'
 DATASET_LABEL_VAL: str = 'dataset/labels/val'
 
 
-NUM_TRAIN: int = 20 # Колличество искаженных картинок для обучения из 1
-NUM_VAL: int = 5 # Колличество искаженных картинок для валидации из 1
+NUM_TRAIN: int = 30 # Колличество искаженных картинок для обучения из 1
+NUM_VAL: int = 10 # Колличество искаженных картинок для валидации из 1
 
 IMAGE_SIZE: int = 256 # Желаемый размер картинки 256х256
 OBJECT_SIZE: int = 110 # Изначальный размер картинки 110х110
