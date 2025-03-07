@@ -1,0 +1,16 @@
+blue_lamp_36w
+blue_on_off_two_close_44
+blue_on_off_two_close_20
+blue_lamp_13w
+blue_lamp_19w
+blue_lamp_32w
+blue_lamp_50w
+blue_lamp_55w
+blue_on_off_one_close_20
+blue_on_off_one_close_44
+blue_on_off_one_open_44
+blue_panel
+pink_on_off_open_54
+red_lamp
+red_panel
+
