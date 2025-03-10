@@ -1,4 +1,4 @@
-from utils.get_all_classes import(
+from utils.services.get_all_classes import(
     get_all_classes,
 )
 

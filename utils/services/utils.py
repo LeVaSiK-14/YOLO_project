@@ -1,7 +1,7 @@
 import time
 import functools
 
-from utils.process_dirs import(
+from utils.services.process_dirs import(
     create_dir,
     create_file,
 )
@@ -32,3 +32,8 @@ def create_dataset_dir(file: str, *dirs: list) -> None:
     for dir in dirs: # Получаем каждую директорию по одной в цикле
         create_dir(dir) # Создаем эту директорию если ее нет
     create_file(file) # Создаем файл dataset/data.yaml
+
+
+def create_media_dir(*dirs: list) -> None:
+    for dir in dirs:
+        create_dir(dir)

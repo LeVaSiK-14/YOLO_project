@@ -1,19 +1,19 @@
 import os
 import cv2
 
-from utils.get_file_name import(
+from utils.services.get_file_name import(
     get_file_name_for_class,
 )
-from utils.get_full_path import(
+from utils.services.get_full_path import(
     get_full_path,
 )
-from utils.get_files_from_dirs import(
+from utils.services.get_files_from_dirs import(
     get_files_from_dir,
 )
-from utils.get_image_class_id import(
+from utils.services.get_image_class_id import(
     get_class_id_by_name,
 )
-from utils.utils import(
+from utils.services.utils import(
     measure_time,
 )
 

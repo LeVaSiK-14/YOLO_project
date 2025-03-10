@@ -2,23 +2,22 @@ import cv2
 import numpy as np
 import random
 
-from utils.get_file_name import(
+from utils.services.get_file_name import(
     get_file_name,
 )
-from utils.process_dirs import(
+from utils.services.process_dirs import(
     create_dir,
 )
-from utils.get_files_from_dirs import(
+from utils.services.get_files_from_dirs import(
     get_files_from_dir,
 )
-from utils.get_full_path import(
+from utils.services.get_full_path import(
     get_full_path,
 )
-from utils.utils import(
+from utils.services.utils import(
     measure_time,
 )
-from utils.configs import(
-    MEDIA,
+from utils.services.configs import(
     IMAGE_SIZE,
     OBJECT_SIZE,
     NUM_IMAGES,
@@ -33,7 +32,6 @@ def get_resized_images(images_dir_path: str, output_dir_path: str) -> None:
         - images_dir_path: str путь к директории с картинками
         - output_dir_path: str путь к директории куда сохранять обработаные картинки
     """
-    create_dir(MEDIA) # Создание директории media (временная)
 
     all_images = get_files_from_dir(images_dir_path) # Получаем список картинок из директории
 

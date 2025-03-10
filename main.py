@@ -1,18 +1,15 @@
+from utils.rotate_images import rotate_images
 from utils.duplicate_elements import(
     create_duplicate_elements,
 )
-from utils.resize_elements import(
-    get_resized_images,
-)
-from utils.get_full_path import(
+from utils.services.get_full_path import(
     get_full_path,
 )
-from utils.process_dirs import(
+from utils.services.process_dirs import(
     move_dirs,
     delete_dirs,
-    delete_file,
 )
-from utils.utils import(
+from utils.services.utils import(
     measure_time,
     create_dataset_dir,
 )
@@ -22,10 +19,13 @@ from utils.create_annotations import(
 from utils.create_data_yaml import(
     write_data_yaml,
 )
-from utils.configs import(
+from utils.services.utils import(
+    create_media_dir,
+)
+from utils.services.configs import(
+    ANGELS,
     ELEMENTS,
     MEDIA,
-    AUGMENTED_IMAGES,
     OUTPUT_TRAIN_DIR, 
     OUTPUT_VAL_DIR,
     DATASET_IMAGE_VAL,
@@ -35,6 +35,7 @@ from utils.configs import(
     DATASET_LABEL_TRAIN,
     DATASET_LABEL_VAL,
     DATASET,
+    ROTATED_IMAGES,
 )
 
 
@@ -58,21 +59,26 @@ def main():
         12) Удаления файла classses.txt
     """
     delete_dirs(DATASET)
-    # delete_file(CLASSES)
-
+    delete_dirs(MEDIA)
+    create_media_dir(
+        MEDIA,
+        ROTATED_IMAGES,
+    )
     create_dataset_dir(
         DATA_YAML,
         DATASET_IMAGE_TRAIN,
         DATASET_IMAGE_VAL,
         DATASET_LABEL_TRAIN,
-        DATASET_LABEL_VAL
+        DATASET_LABEL_VAL,
+        ROTATED_IMAGES,
     )
-    get_resized_images(
+    rotate_images(
         ELEMENTS,
-        get_full_path(MEDIA, AUGMENTED_IMAGES)
+        ROTATED_IMAGES,
+        ANGELS
     )
     create_duplicate_elements(
-        AUGMENTED_IMAGES, 
+        ROTATED_IMAGES, 
         OUTPUT_TRAIN_DIR, 
         OUTPUT_VAL_DIR
     )
@@ -84,7 +90,6 @@ def main():
         get_full_path(MEDIA, OUTPUT_TRAIN_DIR),
         DATASET_IMAGE_TRAIN
     )
-    delete_dirs(MEDIA)
     create_annotation_for_image(
         DATASET_IMAGE_VAL,
         DATASET_LABEL_VAL,
@@ -101,7 +106,7 @@ def main():
         DATASET_IMAGE_TRAIN,
         DATASET_IMAGE_VAL
     )
-    # delete_file(CLASSES)
+    delete_dirs(MEDIA)
 
 
 if __name__ == "__main__":

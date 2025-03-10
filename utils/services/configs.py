@@ -20,13 +20,18 @@ DATASET_LABEL_TRAIN: str = 'dataset/labels/train'
 DATASET_LABEL_VAL: str = 'dataset/labels/val'
 
 
-NUM_TRAIN: int = 20 # Колличество искаженных картинок для обучения из 1
-NUM_VAL: int = 5 # Колличество искаженных картинок для валидации из 1
+NUM_TRAIN: int = 5 # Колличество искаженных картинок для обучения из 1
+NUM_VAL: int = 2 # Колличество искаженных картинок для валидации из 1
 
 IMAGE_SIZE: int = 256 # Желаемый размер картинки 256х256
 OBJECT_SIZE: int = 110 # Изначальный размер картинки 110х110
 NUM_IMAGES: int = 5 #Колличество картинок из 1 разного позицианирования на холсте 256х256
 
 
+ROTATED_IMAGES = 'media/rotated_images'
+
 CLASSES: str = 'classes.txt'
 DATA_YAML: str = 'dataset/data.yaml'
+
+
+ANGELS = list(range(10, 351, 10))

@@ -1,3 +1,5 @@
+
+
 def get_all_classes(classes_file_path: str):
     """
         Функция для получения классов и их ID из файла classes.txt

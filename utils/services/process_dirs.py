@@ -1,7 +1,7 @@
 import shutil
 import os
 
-from utils.get_full_path import(
+from utils.services.get_full_path import(
     get_full_path,
 )
 
