@@ -35,3 +35,6 @@ DATA_YAML: str = 'dataset/data.yaml'
 
 
 ANGELS = list(range(10, 351, 10))
+
+RESIZED_IMAGES_TRAIN = 'media/resized_train_images'
+RESIZED_IMAGES_VAL = 'media/resized_val_images'

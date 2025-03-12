@@ -22,6 +22,9 @@ from utils.create_data_yaml import(
 from utils.services.utils import(
     create_media_dir,
 )
+from utils.resize_images import(
+    resize_images,
+)
 from utils.services.configs import(
     ANGELS,
     ELEMENTS,
@@ -36,6 +39,8 @@ from utils.services.configs import(
     DATASET_LABEL_VAL,
     DATASET,
     ROTATED_IMAGES,
+    RESIZED_IMAGES_TRAIN,
+    RESIZED_IMAGES_VAL
 )
 
 
@@ -63,6 +68,8 @@ def main():
     create_media_dir(
         MEDIA,
         ROTATED_IMAGES,
+        RESIZED_IMAGES_TRAIN,
+        RESIZED_IMAGES_VAL
     )
     create_dataset_dir(
         DATA_YAML,
@@ -82,12 +89,20 @@ def main():
         OUTPUT_TRAIN_DIR, 
         OUTPUT_VAL_DIR
     )
-    move_dirs(
+    resize_images(
+        get_full_path(MEDIA, OUTPUT_TRAIN_DIR),
+        RESIZED_IMAGES_TRAIN
+    )
+    resize_images(
         get_full_path(MEDIA, OUTPUT_VAL_DIR),
+        RESIZED_IMAGES_VAL
+    )
+    move_dirs(
+        RESIZED_IMAGES_VAL,
         DATASET_IMAGE_VAL
     )
     move_dirs(
-        get_full_path(MEDIA, OUTPUT_TRAIN_DIR),
+        RESIZED_IMAGES_TRAIN,
         DATASET_IMAGE_TRAIN
     )
     create_annotation_for_image(
