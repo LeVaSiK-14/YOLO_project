@@ -5,3 +5,7 @@ media/
 dataset/
 t.txt
 .vscode/
+images/
+images640/
+images1920/
+images3000/

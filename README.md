@@ -41,9 +41,7 @@
 > `python detect.py --weights runs/train/exp6/weights/best.pt --source ../images/ --img 1920 --conf 0.45 --view --project ../images/detection_results --name images_results`
 
 
-> **АКТУАЛЬНЫЕ ВЕСА runs/train/exp3**
-> **ВЕСА С ОБУЧЕНИЕМ НА СВЕТИЛЬНИКИ runs/train/exp5**
-> **АКТУАЛЬНЫЕ ВЕСА runs/train/exp**
+> **АКТУАЛЬНЫЕ ВЕСА runs/train/exp2**
 
 ### 4. **Контакты**
 > Создатель: **Бойко Лев**<br>
@@ -58,13 +56,13 @@
 > `psensor`
 
 
-python detect.py --weights runs/train/exp/weights/best.pt --source ../images/one_big.png --img 1920 --conf 0.45 --view
+python detect.py --weights runs/train/exp3/weights/best.pt --source ../images1920/ --img 1920 --conf 0.45 --view --project ../images --name images_results_1920_new
 
 
-python train.py --img 640 --batch 32 --epochs 150 --data ../dataset/data.yaml --weights yolov5x.pt
+
+python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/one.png --img 640 --conf 0.45 --view
 
 
-python detect.py --weights runs/train/exp/weights/best.pt --source ../test/ --img 640 --conf 0.45 --view --project ../images/detection_results --name images_results
+python train.py --img 640 --batch 16 --epochs 50 --data ../dataset/data.yaml --weights yolov5m.pt
 
-
-python detect.py --weights runs/train/exp/weights/best.pt --source ../images/one_big.png --img 640 --conf 0.45 --view
+python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/one_big.png --img 1920 --conf 0.30 --view

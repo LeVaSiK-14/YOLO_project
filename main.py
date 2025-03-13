@@ -106,13 +106,13 @@ def main():
         DATASET_IMAGE_TRAIN
     )
     create_annotation_for_image(
-        DATASET_IMAGE_VAL,
-        DATASET_LABEL_VAL,
+        DATASET_IMAGE_TRAIN,
+        DATASET_LABEL_TRAIN,
         CLASSES,
     )
     create_annotation_for_image(
-        DATASET_IMAGE_TRAIN,
-        DATASET_LABEL_TRAIN,
+        DATASET_IMAGE_VAL,
+        DATASET_LABEL_VAL,
         CLASSES,
     )
     write_data_yaml(

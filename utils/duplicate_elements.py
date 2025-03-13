@@ -21,6 +21,7 @@ from utils.services.get_file_name import(
 from utils.services.utils import(
     measure_time,
 )
+from tqdm import tqdm
 
 
 @measure_time # Декоратор для замера скорости работы функции
@@ -32,8 +33,8 @@ def create_duplicate_elements(source_dir: str, output_train_dir: str, output_val
         - output_train_dir: str путь к директории куда сохранять картинки для обучения
         - output_val_dir: str путь к директории куда сохранять картинки для валидации
     """
+    
     # Создание рандомной трансформации картинок
-
     full_output_train_dir = get_full_path(MEDIA, output_train_dir) # Получаем полный путь к папке для картинок для тренировки
     full_output_val_dir = get_full_path(MEDIA, output_val_dir) # Получаем полный путь к папке для картинок для валидации
 
@@ -41,8 +42,9 @@ def create_duplicate_elements(source_dir: str, output_train_dir: str, output_val
     create_dir(full_output_val_dir) # Создание папки для картинок для валидации
 
     image_files = get_files_from_dir(source_dir) # Получаем список картинок для дубликации внутри папки
-
-    for img_name in image_files: # Получаем каждую картинку отдельно в цикле
+    
+    for img_name in tqdm(image_files): # Получаем каждую картинку отдельно в цикле
+        
         img_path = get_full_path(source_dir, img_name) # Получаем полный путь к картинке
         img = cv2.imread(img_path) # Читаем картинку с openCV
 
@@ -72,4 +74,3 @@ def create_duplicate_elements(source_dir: str, output_train_dir: str, output_val
             aug_img = augmented['image'] # Получаем это изображение
             new_img_name = f"val_{get_file_name(img_path)}__{i+1}.png" # Присваеваем новое название с порядковым номером
             cv2.imwrite(get_full_path(full_output_val_dir, new_img_name), aug_img) # Сохраняем изображение
-

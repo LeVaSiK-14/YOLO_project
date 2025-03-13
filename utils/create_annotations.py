@@ -16,6 +16,8 @@ from utils.services.get_image_class_id import(
 from utils.services.utils import(
     measure_time,
 )
+from tqdm import tqdm
+
 
 @measure_time # Декоратор для замера скорости работы функции
 def create_annotation_for_image(images_dir: str, labels_dir: str, classes_file_path: str) -> None:
@@ -34,7 +36,10 @@ def create_annotation_for_image(images_dir: str, labels_dir: str, classes_file_p
         - labels_dir: str путь к директории куда помещать анотации картинок
         - classes_file_path: str путь к файлу с id и названием класса картинок для YOLO
     """
-    for file_name in get_files_from_dir(images_dir): # Получаем все картинки из папки
+    images_dir_elements = get_files_from_dir(images_dir)
+
+    for file_name in tqdm(images_dir_elements): # Получаем все картинки из папки
+
         if file_name.lower().endswith(".png"): # Смотрим что бы расширение картинки было .png
             img_path = get_full_path(images_dir, file_name) # Получаем полный путь к картинке
             img_name = get_file_name_for_class(img_path) # Получаем название картинки для определения класса

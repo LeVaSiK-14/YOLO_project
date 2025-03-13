@@ -5,19 +5,27 @@ from utils.services.process_dirs import(
     create_dir,
     create_file,
 )
+import math
+
+
+def round_up(num):
+    return math.ceil(num)
 
 
 def measure_time(func):
     """
-        Функция для замера скорости работы других
-        Используется в качестве декоратора
+        Функция для замера скорости работы других.
+        Используется в качестве декоратора.
     """
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         start_time = time.time()
         result = func(*args, **kwargs)
         elapsed = time.time() - start_time
-        print(f"Функция {func.__name__} выполнилась за {elapsed:.2f} сек")
+        minutes = int(elapsed // 60)
+        seconds = elapsed % 60
+        print(f"{func.__name__}: {minutes} мин, {seconds:.1f} сек")
+        # print('='*130)
         return result
     return wrapper
 
