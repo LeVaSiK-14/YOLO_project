@@ -35,4 +35,4 @@ def draw_green_square(image_path, output_path):
     print(f"Изображение сохранено как: {output_path}")
 
 
-draw_green_square("dataset/images/train/train_rotated_10_0___blue_lamp_13w__1.png", "annotated_image2.png")
+draw_green_square("dataset/images/train/train_rotated_90_0___blue_lamp_13w__1.png", "annotated_image2.png")
