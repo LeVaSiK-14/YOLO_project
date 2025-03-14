@@ -1,0 +1,133 @@
+[
+  {
+    "name": "blue_on_off_two_close_44",
+    "color": "#ff007c",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_on_off_two_close_20",
+    "color": "#2d1b89",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_lamp_36w",
+    "color": "#f078f0",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_lamp_55w",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "pink_on_off_open_54",
+    "color": "#ffcc33",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_on_off_one_close_20",
+    "color": "#5ee1b6",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "red_lamp",
+    "color": "#fa3253",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "red_panel",
+    "color": "#9509b0",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_lamp_19w",
+    "color": "#000000",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_on_off_one_close_44",
+    "color": "#32971e",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_on_off_one_open_44",
+    "color": "#6a1d1d",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_panel",
+    "color": "#03ff03",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_lamp_13w",
+    "color": "#902438",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_lamp_32w",
+    "color": "#f59331",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "blue_lamp_50w",
+    "color": "#fd97a8",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "red_on_off_one_close_20",
+    "color": "#0b5476",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "red_on_off_one_close_44",
+    "color": "#ffff00",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "red_lamp_32w",
+    "color": "#5c93cd",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "red_lamp_13w",
+    "color": "#a8ad56",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "red_one_off_one_open_44",
+    "color": "#6b9c6b",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "red_A",
+    "color": "#7b10b0",
+    "type": "any",
+    "attributes": []
+  },
+  {
+    "name": "red_lamp_50w",
+    "color": "#5e5556",
+    "type": "any",
+    "attributes": []
+  }
+]

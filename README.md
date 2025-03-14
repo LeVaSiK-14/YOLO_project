@@ -35,13 +35,15 @@
 1. Для запуска перейдите в директорию **yolov5** командой `cd yolov5`
 2. Запустите процесс обучения 
 > `python train.py --img 640 --batch 32 --epochs 40 --data ../dataset/data.yaml --weights yolov5x.pt`
-> `python train.py --img 640 --batch 16 --epochs 20 --data ../dataset/data.yaml --weights runs/train/exp/weights/best.pt`
+> `python train.py --img 640 --batch 16 --epochs 20 --data ../dataset/data.yaml --weights runs/train/exp3/weights/best.pt`
 3. После успешного обучения запустите команду для обнаружения элементов на чертежах
 > `python detect.py --weights runs/train/exp6/weights/best.pt --source ../images/one_big.png --img 1920 --conf 0.45 --view`
 > `python detect.py --weights runs/train/exp6/weights/best.pt --source ../images/ --img 1920 --conf 0.45 --view --project ../images/detection_results --name images_results`
 
 
 > **АКТУАЛЬНЫЕ ВЕСА runs/train/exp2**
+> **АКТУАЛЬНЫЕ ВЕСА БОЛЕЕ НОВЫЕ runs/train/exp3**
+> **ЛУЧШИЕ АКТУАЛЬНЫЕ ВЕСА runs/train/exp**
 
 ### 4. **Контакты**
 > Создатель: **Бойко Лев**<br>
@@ -56,13 +58,16 @@
 > `psensor`
 
 
-python detect.py --weights runs/train/exp3/weights/best.pt --source ../images1920/ --img 1920 --conf 0.45 --view --project ../images --name images_results_1920_new
 
+
+python train.py --img 640 --batch 16 --epochs 30 --data ../dataset/data.yaml --weights yolov5m.pt
+python train.py --img 640 --batch 16 --epochs 30 --data ../dataset2/data.yaml --weights runs/train/exp3/weights/best.pt
 
 
 python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/one.png --img 640 --conf 0.45 --view
-
-
-python train.py --img 640 --batch 16 --epochs 50 --data ../dataset/data.yaml --weights yolov5m.pt
-
 python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/one_big.png --img 1920 --conf 0.30 --view
+python detect.py --weights runs/train/exp/weights/best.pt --source ../images1920/ --img 1920 --conf 0.45 --view --project ../images --name images_results_1920_new_exp
+
+
+
+Host(`${CVAT_HOST:-localhost}`) &&
