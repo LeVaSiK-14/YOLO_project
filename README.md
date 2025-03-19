@@ -41,9 +41,10 @@
 > `python detect.py --weights runs/train/exp6/weights/best.pt --source ../images/ --img 1920 --conf 0.45 --view --project ../images/detection_results --name images_results`
 
 
-> **АКТУАЛЬНЫЕ ВЕСА runs/train/exp2**
-> **АКТУАЛЬНЫЕ ВЕСА БОЛЕЕ НОВЫЕ runs/train/exp3**
-> **ЛУЧШИЕ АКТУАЛЬНЫЕ ВЕСА runs/train/exp**
+> **АКТУАЛЬНЫЕ ВЕСА runs/train/exp2** ДАТАСЕТ НА КАРТИНКАХ БЕЗ НОВЫХ ЭЛЕМЕНТОВ
+> **АКТУАЛЬНЫЕ ВЕСА БОЛЕЕ НОВЫЕ runs/train/exp3** ДАТАСЕТ С НОВЫМИ ЭЛЕМЕНТАМИ
+> **ЛУЧШИЕ АКТУАЛЬНЫЕ ВЕСА runs/train/exp** ДАТАСЕТ С ЭЛЕМЕНТАМИ ЧЕРТЕЖА(МАЛЕНЬКИЙ 16ШТ) хорошо ищет крупные элементы и 40-50% мелких
+> **ЛУЧШИЕ АКТУАЛЬНЫЕ ВЕСА runs/train/exp5** ДАТАСЕТ С ЭЛЕМЕНТАМИ ЧЕРТЕЖА(БОЛЬШОЙ 360ШТ) хорошо ищет мелкие элементы но не ищет крупные
 
 ### 4. **Контакты**
 > Создатель: **Бойко Лев**<br>
@@ -61,13 +62,9 @@
 
 
 python train.py --img 640 --batch 16 --epochs 30 --data ../dataset/data.yaml --weights yolov5m.pt
-python train.py --img 640 --batch 16 --epochs 30 --data ../dataset2/data.yaml --weights runs/train/exp3/weights/best.pt
+python train.py --img 640 --batch 16 --epochs 30 --data ../dataset3/data.yaml --weights runs/train/exp/weights/best.pt
 
 
 python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/one.png --img 640 --conf 0.45 --view
 python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/one_big.png --img 1920 --conf 0.30 --view
-python detect.py --weights runs/train/exp/weights/best.pt --source ../images1920/ --img 1920 --conf 0.45 --view --project ../images --name images_results_1920_new_exp
-
-
-
-Host(`${CVAT_HOST:-localhost}`) &&
+python detect2.py --weights runs/train/exp5/weights/best.pt --source ../images1920/ --img 1920 --conf 0.45 --view --project ../images --name images_results_1920_new_exp5_id
