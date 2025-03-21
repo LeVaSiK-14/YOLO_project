@@ -2,9 +2,6 @@ env/
 __pycache__/
 .env
 media/
-dataset/
-dataset2/
-dataset3/
 t.txt
 .vscode/
 images/

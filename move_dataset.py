@@ -2,8 +2,9 @@ import os, shutil
 
 
 
-dir_path = '/home/lev/Downloads/detaset3/obj_train_data/combined_pngs'
-output_dir_parh = 'dataset3'
+dir_path = '/home/lev/Downloads/dataset_full/obj_train_data/combined_pngs'
+output_dir_parh = 'dataset_full'
+
 
 image_train_path = f'{output_dir_parh}/images/train'
 image_val_path = f'{output_dir_parh}/images/val'

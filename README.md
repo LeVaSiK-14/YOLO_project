@@ -62,9 +62,16 @@
 
 
 python train.py --img 640 --batch 16 --epochs 30 --data ../dataset/data.yaml --weights yolov5m.pt
-python train.py --img 640 --batch 16 --epochs 30 --data ../dataset3/data.yaml --weights runs/train/exp/weights/best.pt
+python train.py --img 640 --batch 16 --epochs 300 --data ../dataset_full/data.yaml --weights runs/train/exp/weights/best.pt
 
 
 python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/one.png --img 640 --conf 0.45 --view
 python detect.py --weights runs/train/exp2/weights/best.pt --source ../images/one_big.png --img 1920 --conf 0.30 --view
 python detect2.py --weights runs/train/exp5/weights/best.pt --source ../images1920/ --img 1920 --conf 0.45 --view --project ../images --name images_results_1920_new_exp5_id
+
+
+all_elements/ - список всех элементов
+dataset/ - датасет из элементов по 1 на изображении(автогенерация)
+dataset2/ - Датасет на основе чертежей 640 на 640(16 шт)
+dataset3/ - Датасет на основе чертежей из 360 картинок 640 на 640 но аннотированно не все(багует)
+dataset_full/ - тот же dataset3 но проаннотированно все
